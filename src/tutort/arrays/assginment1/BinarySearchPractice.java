@@ -32,5 +32,6 @@ public class BinarySearchPractice {
             System.out.println("Element not found");
         }
 
+
     }
 }

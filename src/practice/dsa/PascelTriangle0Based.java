@@ -28,4 +28,21 @@ public class PascelTriangle0Based {
         }
         return row;
     }
+
+
+    // Using Mathematical  Approach
+    //   Time Complexity O(k)
+    // Space Complexity O(k)
+    public static List<Integer> getRow1(int rowIndex) {
+        List<Integer> row = new ArrayList<>();
+        long value = 1; // First value is always 1
+        row.add((int) value);
+
+        for (int i = 1; i <= rowIndex; i++) {
+            value = value * (rowIndex - i + 1) / i; // Compute the next value
+            row.add((int) value);
+        }
+
+        return row;
+    }
 }

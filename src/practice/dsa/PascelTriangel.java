@@ -11,6 +11,9 @@ public class PascelTriangel {
         System.out.println(result);
     }
 
+    // Using Iterative  Approach
+    //   Time Complexity O(n2)
+    // Space Complexity O(n2)
     public static List<List<Integer>> generate(int numRows) {
         List<List<Integer>> triangle = new ArrayList<>();
 
@@ -30,11 +33,32 @@ public class PascelTriangel {
         return triangle;
     }
 
-    static void arrPrint(int array[]) {
 
-        for (int element : array) {
-            System.out.print(" " + element);
+    // Using Mathematical Formula (Combinatorial Approach)
+    //   Time Complexity O(n2)
+    // Space Complexity O(n2)
+    public static List<List<Integer>> generate1(int numRows) {
+        List<List<Integer>> triangle = new ArrayList<>();
+
+        for (int i = 0; i < numRows; i++) {
+            List<Integer> row = new ArrayList<>();
+            for (int j = 0; j <= i; j++) {
+                row.add(combination(i, j));
+            }
+            triangle.add(row);
         }
-        System.out.println();
+        return triangle;
+    }
+
+    private static int combination(int n, int r) {
+        if (r == 0 || r == n) {
+            return 1;
+        }
+        int result = 1;
+        for (int i = 0; i < r; i++) {
+            result *= (n - i);
+            result /= (i + 1);
+        }
+        return result;
     }
 }

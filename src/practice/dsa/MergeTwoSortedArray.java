@@ -2,6 +2,8 @@ package practice.dsa;
 
 import java.util.Arrays;
 
+// LeetCode https://leetcode.com/problems/merge-sorted-array/
+
 public class MergeTwoSortedArray {
     public static void main(String[] args) {
 
